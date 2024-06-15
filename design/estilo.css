@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    background-color: hsl(30, 38%, 92%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* body ocupa pelo menos a mesma altura da janela de visualização, mas se expandirá se huver conteúdo suficiente */
+    /* fez com que o main ficasse no centro da tela */
+}
+main{
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    width: 625px;
+    display: flex;
+    /* agora as sections da imagem e do texto ficam lado a lado */
+}
+section{
+    width: 50%;
+    /* as duas sections ficaram com tamanhos iguais */
+}
+
+.left img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    /* a imagem cobriu todo o espaço do lado esquerdo */
+}
+.mobile { 
+    display: none; 
+}
+
+.right{
+    padding: 1.2rem;
+}
+
+.tag{
+    color: hsl(228, 12%, 48%);
+    letter-spacing: 4px;
+    margin-top: 0.5rem;    
+}
+h1{
+    font-family: "Fraunces";
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+p{
+    font-size: 1rem;
+    color: hsl(228, 12%, 48%);
+    margin-bottom: 1.5rem;
+    line-height: 1.6rem;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    background-color:hsl(158, 36%, 37%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 2rem;
+    width: 18rem;
+    height: 3rem;
+}
+svg{
+    margin-right: 0.5rem
+}
+button:hover{
+    background-color: hsl(212, 21%, 14%);
+}
+.price{
+    color:hsl(158, 36%, 37%);
+    font-family: "Fraunces";
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+.price2{
+    color: hsl(228, 12%, 48%);
+    font-family: "Montserrat";
+    text-decoration: line-through;
+}
+/* Media Queries para telas menores que 626px */
+@media (max-width: 626px){
+    main{
+        flex-direction: column;
+        /* faz com que uma section quebre linha ficando em cima */
+        width: 90%;
+    }
+    .left{
+        width: 100%;
+        /* a div da imagem antes tinha 50% de largura */
+        height: 230px;
+    }
+    .left img{
+        object-fit:cover;
+        object-position:top;
+        border-radius: 10px 10px 0 0;
+    }
+    .desktop { 
+        display: none;
+        /* a imagem para pc some */
+    }
+    .mobile { 
+        display: block;
+        /* a imagem para mobile aparece */
+    }
+    .right{
+        width: 100%;
+    }
+}
